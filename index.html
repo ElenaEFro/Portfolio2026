@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena Frolov – Portfolio</title>
+<meta name="description" content="Elena Frolov – Content Creator und Designerin. Portfolio: Cenity Bridal, Essentia, TheFred, Warn & Moore, bestelectronic.de.">
+<meta property="og:title" content="Elena Frolov – Creative Portfolio">
+<meta property="og:description" content="Content, Kampagnen, visuelle Kommunikation. 5 Projekte, 5 Branchen.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;0,6..96,900;1,6..96,400&family=Pinyon+Script&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ──────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ─── TOKENS ─────────────────────────────── */
+:root{
+  --bord:#6B1212; --bord-l:#8B1A1A;
+  --cream:#FAF7F2; --cream2:#F2EDE4;
+  --blush:#F5EAEA; --blush2:#ECD5D5;
+  --white:#FFFFFF; --ink:#1A0E0E;
+  --ink2:#503030; --ink3:#A08080;
+  --max:1200px; --g:56px;
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;
+  --s5:40px;--s6:48px;--s7:56px;--s8:64px;
+  --s10:80px;--s12:96px;--s16:128px;
+}
+@media(max-width:700px){:root{--g:22px;--s16:80px;--s12:64px}}
+
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:'Montserrat',sans-serif;font-weight:300;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-thumb{background:var(--bord)}
+
+/* ─── LAYOUT ─────────────────────────────── */
+.w{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+
+/* ─── NAV ────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:62px;background:var(--bord);
+  display:flex;align-items:center;
+  transition:background .4s,backdrop-filter .4s;
+}
+nav.scrolled{background:rgba(107,18,18,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav-in{
+  max-width:var(--max);margin:0 auto;padding:0 var(--g);width:100%;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'Bodoni Moda',serif;font-size:14px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.92);
+}
+.nav-mono{font-family:'Bodoni Moda',serif;font-size:11px;font-weight:800;letter-spacing:1px;color:rgba(236,213,213,.4);}
+.nav-links{display:flex;gap:var(--s4)}
+.nav-links a{
+  font-size:9px;font-weight:300;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.48);text-decoration:none;transition:color .25s;
+}
+.nav-links a:hover{color:rgba(236,213,213,.85)}
+
+/* ─── BURGER BUTTON ──────────────────────── */
+.nav-burger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:36px;height:36px;
+  background:none;border:none;cursor:pointer;padding:4px;
+  flex-shrink:0;
+}
+.nav-burger span{
+  display:block;width:20px;height:1px;
+  background:rgba(255,255,255,.55);
+  transition:transform .3s ease, opacity .3s ease, width .3s ease;
+  transform-origin:center;
+}
+.nav-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;width:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ─── MOBILE MENU DRAWER ─────────────────── */
+.nav-drawer{
+  position:fixed;top:62px;left:0;right:0;z-index:299;
+  background:rgba(80,14,14,.97);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;
+  padding:0 var(--g);
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1), padding .4s ease;
+}
+.nav-drawer.open{
+  max-height:360px;
+  padding:var(--s3) var(--g) var(--s4);
+}
+.nav-drawer a{
+  font-size:11px;font-weight:300;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);text-decoration:none;
+  padding:var(--s3) 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s, padding-left .2s;
+  display:block;
+}
+.nav-drawer a:last-child{border-bottom:none}
+.nav-drawer a:hover{color:rgba(236,213,213,.85);padding-left:6px}
+
+@media(max-width:760px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+}
+
+/* ─── TYPE SCALE ─────────────────────────── */
+.t1{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(60px,9.5vw,124px);
+  font-weight:800;line-height:.86;
+  letter-spacing:-3px;text-transform:uppercase;
+}
+.t2{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(40px,5.5vw,72px);
+  font-weight:800;line-height:.88;
+  letter-spacing:-1.5px;text-transform:uppercase;
+}
+.t3{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(22px,2.8vw,34px);
+  font-weight:600;line-height:1;
+  letter-spacing:-0.5px;
+}
+.t-cap{font-size:9px;font-weight:300;letter-spacing:5px;text-transform:uppercase;}
+.t-body{font-size:13.5px;font-weight:400;line-height:1.88}
+.t-script{font-family:'Pinyon Script',cursive;display:inline-block;}
+
+.c-white{color:rgba(255,255,255,.88)}
+.c-white-dim{color:rgba(255,255,255,.52)}
+.c-white-ghost{color:rgba(255,255,255,.2)}
+.c-ink{color:var(--ink)}
+.c-ink2{color:var(--ink2)}
+.c-ink3{color:var(--ink3)}
+.c-red{color:var(--bord-l)}
+.c-blush{color:var(--blush2)}
+
+/* ─── HERO ───────────────────────────────── */
+.hero{
+  background:var(--bord);min-height:100vh;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(255,220,200,.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 10% 90%, rgba(20,4,4,.35) 0%, transparent 55%),
+    linear-gradient(175deg, rgba(90,10,10,.0) 0%, rgba(20,4,4,.45) 100%);
+  pointer-events:none;
+}
+.hero-main{
+  position:relative;z-index:2;
+  flex:1;display:flex;align-items:flex-end;
+  padding:calc(62px + var(--s16)) var(--g) var(--s10);
+  max-width:var(--max);margin:0 auto;width:100%;
+}
+.hero-left{flex:1}
+.hero-title{color:rgba(255,255,255,.9);margin-bottom:0}
+.hero-title .t1{
+  display:block;
+  color:#fff;
+  text-shadow:none;
+  -webkit-font-smoothing:antialiased;
+  mix-blend-mode:normal;
+  line-height:.82;
+}
+/* Script subtitle flows in under the bold word — solid, no transparency issues */
+.hero-sub{
+  font-family:'Pinyon Script',cursive;
+  font-size:clamp(52px,7.5vw,96px);
+  /* fully opaque blush — no rgba ghost that causes shimmer */
+  color:#e8cece;
+  display:block;
+  /* negative margin pulls it up so it tucks under "CREATIVE" like the Pinterest ref */
+  margin-top:-0.05em;
+  margin-left:6px;
+  margin-bottom:var(--s7);
+  line-height:1.0;
+  text-shadow:none;
+  /* isolate rendering layer — prevents bleed from parent gradient */
+  isolation:isolate;
+  position:relative;
+  z-index:1;
+}
+.hero-meta{
+  display:flex;align-items:center;gap:var(--s6);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:var(--s4);
+}
+.hero-stat{display:flex;flex-direction:column;gap:5px}
+.hero-stat-n{
+  font-family:'Bodoni Moda',serif;
+  font-size:28px;font-weight:600;letter-spacing:-1px;
+  color:rgba(255,255,255,.65);line-height:1;
+}
+.hero-stat-l{font-size:8px;font-weight:300;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,255,255,.18)}
+.hero-divider{width:1px;height:36px;background:rgba(255,255,255,.06);flex-shrink:0}
+
+/* ticker */
+.ticker-rail{position:relative;z-index:2;overflow:hidden;padding:13px 0;border-top:1px solid rgba(255,255,255,.05)}
+.ticker-inner{display:inline-flex;animation:tick 40s linear infinite;will-change:transform}
+.ticker-inner span{
+  font-size:8px;font-weight:300;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(255,255,255,.13);padding:0 var(--s4);
+}
+.ticker-inner span:nth-child(even){color:rgba(255,255,255,.07);letter-spacing:5px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTION BASE ───────────────────────── */
+.sec{padding:var(--s16) 0;scroll-margin-top:78px}
+.bg-cream{background:var(--cream)}
+.bg-cream2{background:var(--cream2)}
+.bg-blush{background:var(--blush)}
+.bg-dark{background:var(--bord)}
+.bg-white{background:var(--white)}
+
+/* ─── PROJECT ANATOMY ────────────────────── */
+.proj-band{
+  display:flex;align-items:baseline;gap:var(--s3);
+  border-bottom:1px solid;padding-bottom:var(--s3);
+  margin-bottom:var(--s10);
+}
+.bg-cream .proj-band,.bg-cream2 .proj-band,.bg-blush .proj-band,.bg-white .proj-band{border-color:rgba(139,26,26,.1);}
+.bg-dark .proj-band{border-color:rgba(255,255,255,.07)}
+
+.proj-num{
+  font-family:'Bodoni Moda',serif;
+  font-size:11px;font-weight:300;letter-spacing:4px;
+  text-transform:uppercase;flex-shrink:0;padding-bottom:3px;
+}
+.bg-cream .proj-num,.bg-cream2 .proj-num,.bg-blush .proj-num,.bg-white .proj-num{color:var(--ink3)}
+.bg-dark .proj-num{color:rgba(255,255,255,.2)}
+
+.proj-spread{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:var(--s7);
+  align-items:start;
+  margin-bottom:var(--s10);
+}
+@media(max-width:860px){.proj-spread{grid-template-columns:1fr;gap:var(--s5)}}
+
+.proj-spread-img{position:relative}
+.proj-spread-img .img-cap{
+  position:absolute;bottom:var(--s2);left:var(--s2);
+  font-size:8px;font-weight:300;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);background:rgba(26,14,14,.6);
+  padding:4px 10px;pointer-events:none;
+}
+.proj-spread-right{padding-top:var(--s1)}
+.proj-spread-right .proj-kicker{margin-bottom:var(--s4);}
+.proj-spread-right .proj-desc{margin-bottom:var(--s6);max-width:360px;}
+.proj-tags{display:flex;flex-direction:column;gap:0;border-top:1px solid}
+.bg-cream .proj-tags,.bg-cream2 .proj-tags,.bg-blush .proj-tags,.bg-white .proj-tags{border-color:rgba(139,26,26,.08);}
+.bg-dark .proj-tags{border-color:rgba(255,255,255,.06)}
+.proj-tag{
+  font-size:9px;font-weight:400;letter-spacing:2px;text-transform:uppercase;
+  padding:10px 0;border-bottom:1px solid;
+}
+.bg-cream .proj-tag,.bg-cream2 .proj-tag,.bg-blush .proj-tag,.bg-white .proj-tag{color:var(--ink3);border-color:rgba(139,26,26,.06);}
+.bg-dark .proj-tag{color:rgba(255,255,255,.25);border-color:rgba(255,255,255,.05)}
+
+/* case study grid */
+.case{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid;
+  margin-bottom:var(--s10);
+}
+.bg-cream .case,.bg-cream2 .case,.bg-blush .case,.bg-white .case{border-color:rgba(139,26,26,.1)}
+.bg-dark .case{border-color:rgba(255,255,255,.07)}
+
+.case-col{padding:var(--s4) var(--s3) var(--s4) 0;border-right:1px solid}
+.bg-cream .case-col,.bg-cream2 .case-col,.bg-blush .case-col,.bg-white .case-col{border-color:rgba(139,26,26,.06)}
+.bg-dark .case-col{border-color:rgba(255,255,255,.04)}
+.case-col:last-child{border-right:none;padding-right:0}
+.case-col:first-child{padding-left:0}
+
+.case-key{font-size:8px;font-weight:300;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:var(--s3);padding-top:2px;}
+.bg-cream .case-key,.bg-cream2 .case-key,.bg-blush .case-key,.bg-white .case-key{color:var(--ink3)}
+.bg-dark .case-key{color:rgba(255,255,255,.2)}
+.case-val{font-size:13px;font-weight:400;line-height:1.8}
+.bg-cream .case-val,.bg-cream2 .case-val,.bg-blush .case-val,.bg-white .case-val{color:var(--ink2)}
+.bg-dark .case-val{color:rgba(255,255,255,.52)}
+
+@media(max-width:860px){
+  .case{grid-template-columns:1fr 1fr}
+  .case-col:nth-child(2){border-right:none;padding-right:0}
+  .case-col:nth-child(3){padding-left:0;border-right:1px solid;border-top:1px solid}
+  .case-col:nth-child(4){border-right:none;padding-right:0;border-top:1px solid}
+  .bg-cream .case-col:nth-child(3),.bg-cream2 .case-col:nth-child(3),.bg-blush .case-col:nth-child(3),.bg-white .case-col:nth-child(3),
+  .bg-cream .case-col:nth-child(4),.bg-cream2 .case-col:nth-child(4),.bg-blush .case-col:nth-child(4),.bg-white .case-col:nth-child(4){border-color:rgba(139,26,26,.06)}
+  .bg-dark .case-col:nth-child(3),.bg-dark .case-col:nth-child(4){border-color:rgba(255,255,255,.04)}
+}
+@media(max-width:500px){
+  .case{grid-template-columns:1fr}
+  .case-col{border-right:none!important;padding:var(--s3) 0;border-top:1px solid!important}
+  .case-col:first-child{border-top:none!important}
+}
+
+/* ─── IMAGE FRAMES ───────────────────────── */
+/* contain keeps full design visible; themed bg per section */
+.f{
+  overflow:hidden;cursor:pointer;position:relative;
+  background:#ede8e0;
+  border-radius:2px;
+}
+.f img{
+  width:100%;height:100%;object-fit:contain;display:block;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.f:hover img{transform:scale(1.03)}
+.f::after{
+  content:'↗';position:absolute;bottom:var(--s2);right:var(--s2);
+  font-size:11px;color:rgba(80,48,48,.4);
+  opacity:0;transform:translate(3px,3px);transition:opacity .2s,transform .2s;
+}
+.f:hover::after{opacity:1;transform:translate(0,0)}
+@media(hover:none){.f:hover img{transform:none}.f::after{display:none}}
+
+/* Per-section bg tones so images feel placed, not floating */
+.bg-dark .f{background:rgba(20,5,5,.55)}
+.bg-blush .f{background:#ede8e0}
+.bg-white .f{background:#f4f0ea}
+
+/* Essentia: warm pink backdrop matches brand */
+#essentia .f{background:#f7eef0}
+/* TheFred: soft green matches brand */
+#fred .f{background:#eef4ee}
+/* Warn & Moore: neutral dark */
+#warn .f{background:#e8e4de}
+/* bestelectronic: near-black suits tech ads */
+#besto .f{background:#111}
+
+/* ─── STORY FRAME — 9:16 aspect ratio ───── */
+/* For Instagram Stories: always 9:16, never cropped */
+.f-story{
+  overflow:hidden;cursor:pointer;position:relative;
+  background:rgba(139,26,26,.04);
+  aspect-ratio:9/16;
+  width:100%;
+}
+.f-story img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.f-story:hover img{transform:scale(1.025)}
+.f-story::after{
+  content:'↗';position:absolute;bottom:var(--s2);right:var(--s2);
+  font-size:11px;color:rgba(255,255,255,.55);
+  opacity:0;transform:translate(3px,3px);transition:opacity .2s,transform .2s;
+}
+.f-story:hover::after{opacity:1;transform:translate(0,0)}
+@media(hover:none){.f-story:hover img{transform:none}.f-story::after{display:none}}
+
+/* ─── IMAGE LAYOUTS ──────────────────────── */
+
+/* A — Cenity: story strip — 9:16 columns */
+.lay-strip{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  gap:var(--s1);
+  align-items:start;
+}
+@media(max-width:860px){
+  .lay-strip{grid-template-columns:repeat(5,1fr)}
+  .lay-strip .f-story:nth-child(n+6){display:none}
+}
+@media(max-width:520px){
+  .lay-strip{grid-template-columns:repeat(3,1fr)}
+  .lay-strip .f-story:nth-child(n+4){display:none}
+}
+
+/* B — Essentia: hero + 2 stacked */
+.lay-essentia{
+  display:grid;
+  grid-template-columns:5fr 3fr;
+  grid-template-rows:1fr 1fr;
+  gap:var(--s2);
+  height:520px;
+}
+.lay-essentia .f:first-child{grid-row:span 2}
+@media(max-width:700px){
+  .lay-essentia{grid-template-columns:1fr;height:auto}
+  .lay-essentia .f:first-child{grid-row:span 1;height:320px}
+  .lay-essentia .f:nth-child(2),.lay-essentia .f:nth-child(3){height:200px}
+}
+
+/* C — TheFred: editorial magazine spread */
+.lay-fred{
+  display:grid;
+  grid-template-columns:1.8fr 1fr 1fr;
+  grid-template-rows:320px 230px;
+  gap:var(--s2);
+}
+.lay-fred .f:nth-child(1){grid-row:span 2}
+.lay-fred .f:nth-child(2){margin-top:var(--s7)}
+@media(max-width:800px){
+  .lay-fred{grid-template-columns:1fr 1fr;grid-template-rows:280px 220px}
+  .lay-fred .f:nth-child(1){grid-row:span 1;height:280px}
+  .lay-fred .f:nth-child(2){margin-top:0}
+}
+@media(max-width:520px){
+  .lay-fred{grid-template-columns:1fr;grid-template-rows:auto}
+  .lay-fred .f{height:260px!important;margin-top:0!important}
+  .lay-fred .f:nth-child(n+4){display:none}
+}
+
+/* D — Warn: offset pair */
+.lay-warn{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s4);
+  align-items:start;
+}
+.lay-warn .f:nth-child(2){margin-top:var(--s8)}
+@media(max-width:600px){
+  .lay-warn{grid-template-columns:1fr}
+  .lay-warn .f:nth-child(2){margin-top:0}
+}
+
+/* E — bestelectronic: staggered 3-col */
+.lay-ads{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--s4);align-items:end;
+}
+.lay-ads .f:nth-child(1){margin-bottom:var(--s8)}
+.lay-ads .f:nth-child(3){margin-bottom:var(--s4)}
+@media(max-width:680px){
+  .lay-ads{grid-template-columns:1fr 1fr}
+  .lay-ads .f:nth-child(3){display:none}
+  .lay-ads .f{margin-bottom:0!important}
+}
+@media(max-width:420px){.lay-ads{grid-template-columns:1fr}}
+
+/* ─── INTERSTITIAL ───────────────────────── */
+.interstitial{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:var(--s6);
+  align-items:center;
+  margin-bottom:var(--s10);
+}
+.interstitial-text{padding:var(--s4) 0}
+.interstitial-text .int-label{margin-bottom:var(--s3)}
+.interstitial-text .int-quote{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(18px,2.2vw,26px);
+  font-weight:600;font-style:italic;
+  line-height:1.35;letter-spacing:-.3px;
+}
+.bg-cream .interstitial-text .int-quote,.bg-blush .interstitial-text .int-quote,
+.bg-cream2 .interstitial-text .int-quote,.bg-white .interstitial-text .int-quote{color:var(--ink2);}
+.bg-dark .interstitial-text .int-quote{color:rgba(255,255,255,.52)}
+@media(max-width:700px){.interstitial{grid-template-columns:1fr}}
+
+.rule{height:1px;margin:var(--s10) 0}
+.bg-cream .rule,.bg-cream2 .rule,.bg-blush .rule,.bg-white .rule{background:rgba(139,26,26,.07)}
+.bg-dark .rule{background:rgba(255,255,255,.06)}
+
+/* ─── PEAK SECTION (Cenity) ──────────────── */
+.sec-peak .proj-band{margin-bottom:var(--s12)}
+.sec-peak .proj-band h2.t2{font-size:clamp(52px,8vw,104px);letter-spacing:-3px;}
+.sec-peak .proj-spread{grid-template-columns:1.35fr 1fr;gap:var(--s10);margin-bottom:var(--s12);}
+/* Cenity spread image: tall enough to show a story preview */
+.sec-peak .proj-spread-img .f{height:500px}
+.sec-peak .proj-spread-right .t3{font-size:clamp(24px,3.2vw,42px);line-height:.95;}
+.sec-peak .case{margin-bottom:var(--s12)}
+.sec-peak .interstitial{margin-bottom:var(--s12)}
+.sec-peak .proj-num{font-size:clamp(11px,1.2vw,13px);letter-spacing:5px;}
+@media(max-width:860px){
+  .sec-peak .proj-spread-img .f{height:340px}
+  .sec-peak .proj-spread{gap:var(--s6)}
+}
+
+/* ─── WARN GMBH — script sub ─────────────── */
+/* "GmbH" rendered as small-caps label, not script */
+.proj-sub-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;font-weight:300;
+  letter-spacing:4px;text-transform:uppercase;
+  display:block;margin-left:4px;margin-top:4px;
+  opacity:.45;
+  font-style:normal;
+}
+.bg-cream .proj-sub-label,.bg-white .proj-sub-label,.bg-blush .proj-sub-label{color:var(--ink3)}
+.bg-dark .proj-sub-label{color:rgba(236,213,213,.4)}
+
+/* ─── OUTRO ──────────────────────────────── */
+.outro{background:var(--bord);padding:var(--s16) 0 var(--s12)}
+.outro-grid{
+  display:grid;grid-template-columns:5fr 4fr;
+  gap:var(--s12);align-items:start;
+  border-top:1px solid rgba(255,255,255,.07);
+  padding-top:var(--s8);
+}
+@media(max-width:700px){.outro-grid{grid-template-columns:1fr;gap:var(--s8)}}
+.outro-hl{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(32px,4.5vw,56px);
+  font-weight:700;line-height:.92;letter-spacing:-1px;
+  text-transform:uppercase;color:rgba(255,255,255,.82);
+  margin-top:var(--s3);margin-bottom:var(--s4);
+}
+.outro-desc{font-size:13px;font-weight:400;line-height:1.85;color:rgba(255,255,255,.38);max-width:360px}
+.contact-list{display:flex;flex-direction:column;gap:var(--s5);margin-top:var(--s2)}
+.c-item{display:flex;flex-direction:column;gap:4px}
+.c-key{font-size:8px;font-weight:400;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,255,255,.22)}
+.c-val{font-size:13px;font-weight:400;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+a.c-val:hover{color:var(--blush2)}
+
+/* ─── FOOTER ─────────────────────────────── */
+footer{
+  background:var(--ink);padding:var(--s3) var(--g);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s1);
+}
+.fn{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.14)}
+
+/* ─── REVEAL ─────────────────────────────── */
+.r{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);}
+.r.in{opacity:1;transform:none;}
+.r2{opacity:0;transform:translateY(18px);transition:opacity .7s .1s ease,transform .7s .1s cubic-bezier(.2,.8,.2,1);}
+.r2.in{opacity:1;transform:none;}
+.r3{opacity:0;transform:translateY(18px);transition:opacity .7s .2s ease,transform .7s .2s cubic-bezier(.2,.8,.2,1);}
+.r3.in{opacity:1;transform:none;}
+
+/* ─── LIGHTBOX ───────────────────────────── */
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(15,5,5,.97);display:flex;align-items:center;justify-content:center;padding:var(--s3);cursor:zoom-out;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.open{opacity:1;pointer-events:all}
+.lb-w{transform:scale(.95);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.lb.open .lb-w{transform:scale(1)}
+/* Story images in lightbox: show full 9:16 */
+.lb img{
+  max-height:88vh;
+  max-width:min(90vw,420px);
+  width:auto;height:auto;
+  object-fit:contain;display:block;
+}
+.lb-x{position:absolute;top:var(--s3);right:var(--s3);font-size:22px;color:rgba(255,255,255,.18);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;transition:color .2s;padding:var(--s1)}
+.lb-x:hover{color:var(--blush2)}
+.lb-nav{position:absolute;bottom:var(--s4);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:var(--s2)}
+.lb-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,.1);background:none;cursor:pointer;font-size:18px;color:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;transition:all .2s;border-radius:50%;font-family:'Montserrat',sans-serif}
+.lb-btn:hover{border-color:var(--blush2);color:var(--blush2)}
+.lb-ct{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.14);font-weight:300}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blush2);outline-offset:3px}
+.lb-btn:focus-visible{outline:2px solid var(--blush2);outline-offset:4px;border-color:var(--blush2);color:var(--blush2)}
+.lb-x:focus-visible{outline:2px solid var(--blush2);outline-offset:4px;color:var(--blush2)}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav aria-label="Hauptnavigation">
+  <div class="nav-in">
+    <div class="nav-logo"><span class="nav-mono">EF</span>&nbsp;&nbsp;Elena Frolov</div>
+    <div class="nav-links">
+      <a href="#cenity">Cenity</a>
+      <a href="#essentia">Essentia</a>
+      <a href="#fred">TheFred</a>
+      <a href="#warn">Warn &amp; Moore</a>
+      <a href="#besto">bestelectronic</a>
+    </div>
+    <button class="nav-burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <a href="#cenity" class="drawer-link">Cenity</a>
+  <a href="#essentia" class="drawer-link">Essentia</a>
+  <a href="#fred" class="drawer-link">TheFred</a>
+  <a href="#warn" class="drawer-link">Warn &amp; Moore</a>
+  <a href="#besto" class="drawer-link">bestelectronic</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Portfolio Intro">
+  <div class="hero-main">
+    <div class="hero-left">
+      <h1>
+        <span class="t1 hero-title" style="display:block;color:#fff;text-shadow:none;">Creative</span>
+        <span class="hero-sub">Content &amp; Design</span>
+      </h1>
+      <p class="t-cap c-white-ghost" style="margin-bottom:var(--s10)">Content &nbsp;·&nbsp; Kampagnen &nbsp;·&nbsp; Visuelle Kommunikation</p>
+      <div class="hero-meta r">
+        <div class="hero-stat">
+          <span class="hero-stat-n">5</span>
+          <span class="hero-stat-l">Projekte</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-n">5</span>
+          <span class="hero-stat-l">Branchen</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-n">20+</span>
+          <span class="hero-stat-l">Creatives</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker-rail" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>Instagram Stories</span><span>Product Creatives</span><span>Performance Ads</span>
+      <span>B2B Social Media</span><span>Content Strategy</span><span>Ad Design</span>
+      <span>Instagram Stories</span><span>Product Creatives</span><span>Performance Ads</span>
+      <span>B2B Social Media</span><span>Content Strategy</span><span>Ad Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     01 — CENITY BRIDAL
+══════════════════════════════════════ -->
+<section class="sec sec-peak bg-cream" id="cenity" aria-labelledby="h-cenity">
+  <div class="w">
+
+    <div class="proj-band r">
+      <span class="proj-num">01</span>
+      <h2 class="t2 c-ink" id="h-cenity">
+        <span style="display:block">Cenity</span>
+        <span style="font-family:'Pinyon Script',cursive;font-size:.75em;font-weight:400;letter-spacing:0;text-transform:none;color:var(--bord-l);line-height:1.1;display:block;margin-left:3px">Bridal</span>
+      </h2>
+    </div>
+
+    <div class="proj-spread r2">
+      <div class="proj-spread-img">
+        <!-- Story preview in spread: use 9:16 container -->
+        <div class="f-story" style="max-width:260px" onclick="lb('cenity',5)">
+          <img loading="lazy" src="CE_Quote.JPG" alt="Cenity Bridal – Story: Terminanfrage">
+          <div class="img-cap">Konversions-Format</div>
+        </div>
+      </div>
+      <div class="proj-spread-right">
+        <p class="t-cap c-red proj-kicker">Instagram Stories</p>
+        <h3 class="t3 c-ink" style="margin-bottom:var(--s3)">Story-Strategie entlang der Kaufentscheidung</h3>
+        <p class="t-body c-ink2 proj-desc">Story-Strategie für ein Brautmodengeschäft — entwickelt entlang der Entscheidungsreise zur Terminanfrage.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Stories</span>
+          <span class="proj-tag">Bridal · Lifestyle</span>
+          <span class="proj-tag">Content Strategy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case r3">
+      <div class="case-col">
+        <div class="case-key">Ausgangssituation</div>
+        <div class="case-val">Cenity war auf Instagram aktiv, aber ohne inhaltliche Linie. Stories erschienen unregelmäßig, ohne strategischen Zusammenhang.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Aufgabe</div>
+        <div class="case-val">Wiederverwendbare Story-Strategie, die Sichtbarkeit aufbaut, Vertrauen schafft und direkt zur Terminanfrage führt.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ansatz</div>
+        <div class="case-val">Drei inhaltliche Ebenen: Emotion, Information, Konversion. Jedes Format einem Ziel zugeordnet — kein Inhalt ohne Funktion.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ergebnis</div>
+        <div class="case-val">Neun Formate für den wiederkehrenden Einsatz. Konsistente visuelle Sprache über alle Story-Typen hinweg.</div>
+      </div>
+    </div>
+
+    <div class="interstitial r">
+      <div class="interstitial-text">
+        <p class="t-cap c-ink3 int-label">Designentscheidung</p>
+        <p class="int-quote c-ink2">„Jedes Format folgt einem klaren Ziel — Emotion, Information oder Konversion."</p>
+      </div>
+      <div class="f-story" style="max-width:200px;margin:0 auto" onclick="lb('cenity',2)">
+        <img loading="lazy" src="CE_Q.jpeg.JPG" alt="Cenity Bridal – Story: Frage des Tages">
+      </div>
+    </div>
+
+    <!-- Story strip — all 9:16 -->
+    <div class="lay-strip r">
+      <div class="f-story" onclick="lb('cenity',0)"><img loading="lazy" src="CE_Bridetobe.jpeg" alt="Cenity Bridal – Story: Bride to Be"></div>
+      <div class="f-story" onclick="lb('cenity',1)"><img loading="lazy" src="CE_RealBride.jpeg.JPG" alt="Cenity Bridal – Story: Die schönste Geschichte"></div>
+      <div class="f-story" onclick="lb('cenity',2)"><img loading="lazy" src="CE_Q.jpeg.JPG" alt="Cenity Bridal – Story: Frage des Tages"></div>
+      <div class="f-story" onclick="lb('cenity',3)"><img loading="lazy" src="CE_Interaktiv.jpeg.JPG" alt="Cenity Bridal – Story: Hochzeit zählt"></div>
+      <div class="f-story" onclick="lb('cenity',4)"><img loading="lazy" src="CE_Begleitpersonen.jpeg.JPG" alt="Cenity Bridal – Story: Begleitpersonen"></div>
+      <div class="f-story" onclick="lb('cenity',5)"><img loading="lazy" src="CE_Quote.JPG" alt="Cenity Bridal – Story: Terminanfrage"></div>
+      <div class="f-story" onclick="lb('cenity',6)"><img loading="lazy" src="CE_5Tipps.JPG" alt="Cenity Bridal – Story: 5 Tipps zur Anprobe"></div>
+      <div class="f-story" onclick="lb('cenity',7)"><img loading="lazy" src="CE_to_Do.JPG" alt="Cenity Bridal – Story: Bridal Looks"></div>
+      <div class="f-story" onclick="lb('cenity',8)"><img loading="lazy" src="CE_Basque.PNG" alt="Cenity Bridal – Story: Trend Basque Waists"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     02 — ESSENTIA
+══════════════════════════════════════ -->
+<section class="sec bg-dark" id="essentia" aria-labelledby="h-essentia">
+  <div class="w">
+
+    <div class="proj-band r">
+      <span class="proj-num">02</span>
+      <h2 class="t2 c-white" id="h-essentia">
+        <span style="display:block">Essentia</span>
+        <span style="font-family:'Pinyon Script',cursive;font-size:.75em;font-weight:400;letter-spacing:0;text-transform:none;color:rgba(236,213,213,.55);line-height:1.1;display:block;margin-left:3px">Vitamins</span>
+      </h2>
+    </div>
+
+    <div class="proj-spread r2" style="grid-template-columns:1fr 1.2fr">
+      <div class="proj-spread-right" style="padding-top:0">
+        <p class="t-cap c-blush proj-kicker">Product Creatives</p>
+        <h3 class="t3 c-white" style="margin-bottom:var(--s3)">Einheitliche Bildsprache über drei Kanäle</h3>
+        <p class="t-body c-white-dim proj-desc">Ad Creatives für eine pflanzliche Vitamin-Marke auf Amazon und im eigenen Shopify-Store.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Amazon Ads</span>
+          <span class="proj-tag">Shopify Store</span>
+          <span class="proj-tag">E-Commerce</span>
+        </div>
+      </div>
+      <div class="proj-spread-img">
+        <div class="f" style="height:420px" onclick="lb('essentia',0)">
+          <img loading="lazy" src="ES_Berry.PNG" alt="Essentia – Ad Creative: Berry Bless">
+          <div class="img-cap">Amazon Listing</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case r3">
+      <div class="case-col">
+        <div class="case-key">Ausgangssituation</div>
+        <div class="case-val">Essentia benötigte Creatives für mehrere Kanäle — bei gleichzeitig hoher Markenkonsistenz und klarer Produktkommunikation.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Aufgabe</div>
+        <div class="case-val">Gestaltung für Amazon-Listings, Shopify-Store und E-Mail-Newsletter. Einheitliches Erscheinungsbild über alle Formate.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ansatz</div>
+        <div class="case-val">Produktbezogene Farbwelten pro Sorte. Benefit-Kommunikation im Vordergrund. Social Proof als fester Bestandteil der Bildsprache.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ergebnis</div>
+        <div class="case-val">Drei verwendungsfertige Formate: Produktvisual, Newsletter-Banner, Etikett — sofort einsetzbar auf allen Kanälen.</div>
+      </div>
+    </div>
+
+    <div class="lay-essentia r">
+      <div class="f" onclick="lb('essentia',0)">
+        <img loading="lazy" src="ES_Berry.PNG" alt="Essentia – Ad Creative: Berry Bless">
+      </div>
+      <div class="f" onclick="lb('essentia',1)">
+        <img loading="lazy" src="ES_Off.JPG" alt="Essentia – Newsletter Banner">
+      </div>
+      <div class="f" onclick="lb('essentia',2)">
+        <img loading="lazy" src="Es_MissGreen.JPG" alt="Essentia – Etikett: Miss Green">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     03 — THEFRED
+══════════════════════════════════════ -->
+<section class="sec bg-blush" id="fred" aria-labelledby="h-fred">
+  <div class="w">
+
+    <div class="proj-band r">
+      <span class="proj-num">03</span>
+      <h2 class="t2 c-ink" id="h-fred">
+        <span style="display:block">TheFred</span>
+        <span style="font-family:'Pinyon Script',cursive;font-size:.75em;font-weight:400;letter-spacing:0;text-transform:none;color:var(--bord-l);line-height:1.1;display:block;margin-left:3px">Health Drinks</span>
+      </h2>
+    </div>
+
+    <div class="proj-spread r2">
+      <div class="proj-spread-img">
+        <div class="f" style="height:440px" onclick="lb('fred',0)">
+          <img loading="lazy" src="TheFred_VitaminB.JPG" alt="TheFred – Carousel: B-Vitamine">
+          <div class="img-cap">Carousel-Serie</div>
+        </div>
+      </div>
+      <div class="proj-spread-right">
+        <p class="t-cap c-red proj-kicker">Instagram Content</p>
+        <h3 class="t3 c-ink" style="margin-bottom:var(--s3)">Komplexe Inhalte in konsistente Bildsprache</h3>
+        <p class="t-body c-ink2 proj-desc">Content-System für einen Health-Drinks Brand mit Fokus auf Inhaltsstoffe und Wirkung.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Instagram Feed</span>
+          <span class="proj-tag">Content Series</span>
+          <span class="proj-tag">Health &amp; Lifestyle</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case r3">
+      <div class="case-col">
+        <div class="case-key">Ausgangssituation</div>
+        <div class="case-val">TheFred wollte Reichweite aufbauen und Gesundheitsinhalte verständlich vermitteln — ohne den Markenton zu verlieren.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Aufgabe</div>
+        <div class="case-val">Skalierbares Content-System: Carousel-Serien für Wissensinhalte, interaktive Story-Formate für Community-Bindung.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ansatz</div>
+        <div class="case-val">Fachthemen wie B-Vitamine und Zink in klare Bildsprache übersetzt. Quiz-Formate machen Inhalte erlebbar statt nur erklärend.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ergebnis</div>
+        <div class="case-val">Fünf Formate mit einheitlichem visuellen System — einsetzbar als wiederholende Content-Serie.</div>
+      </div>
+    </div>
+
+    <div class="interstitial r">
+      <div class="interstitial-text">
+        <p class="t-cap c-ink3 int-label">Designentscheidung</p>
+        <p class="int-quote">„Komplexe Inhalte brauchen visuelle Struktur — kein Inhalt ohne klaren Aufbau."</p>
+      </div>
+      <div class="f" style="height:300px" onclick="lb('fred',3)">
+        <img loading="lazy" src="TheFred_Zinc.JPG" alt="TheFred – Carousel: Zink Detail">
+      </div>
+    </div>
+
+    <div class="lay-fred r">
+      <div class="f" onclick="lb('fred',0)"><img loading="lazy" src="TheFred_VitaminB.JPG" alt="TheFred – Carousel: B-Vitamine"></div>
+      <div class="f" onclick="lb('fred',1)"><img loading="lazy" src="TheFred_02.JPG" alt="TheFred – Carousel: B-Vitamine Übersicht"></div>
+      <div class="f" onclick="lb('fred',2)"><img loading="lazy" src="TheFred_Vitamins.JPG" alt="TheFred – Carousel: Zink Benefits"></div>
+      <div class="f" onclick="lb('fred',3)"><img loading="lazy" src="TheFred_Zinc.JPG" alt="TheFred – Carousel: Zink Detail"></div>
+      <div class="f" onclick="lb('fred',4)"><img loading="lazy" src="TheFred_Quiz.jpg" alt="TheFred – Story: Quiz Format"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     04 — WARN & MOORE
+══════════════════════════════════════ -->
+<section class="sec bg-white" id="warn" aria-labelledby="h-warn">
+  <div class="w">
+
+    <div class="proj-band r">
+      <span class="proj-num">04</span>
+      <h2 class="t2 c-ink" id="h-warn">
+        <span style="display:block">Warn &amp; Moore</span>
+        <span class="proj-sub-label">GmbH</span>
+      </h2>
+    </div>
+
+    <div class="proj-spread r2" style="grid-template-columns:1fr 1.1fr">
+      <div class="proj-spread-right" style="padding-top:0">
+        <p class="t-cap c-red proj-kicker">B2B Social Media</p>
+        <h3 class="t3 c-ink" style="margin-bottom:var(--s3)">Corporate Content mit klarer Informationshierarchie</h3>
+        <p class="t-body c-ink2 proj-desc">Social Media Content für ein Messtechnikunternehmen — Instagram und LinkedIn, konsistentes Corporate Visual System.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Instagram · LinkedIn</span>
+          <span class="proj-tag">Corporate Design</span>
+          <span class="proj-tag">B2B</span>
+        </div>
+      </div>
+      <div class="proj-spread-img">
+        <div class="f" style="height:400px" onclick="lb('warn',0)">
+          <img loading="lazy" src="Messe.PNG" alt="Warn & Moore – Post: Mess X116">
+          <div class="img-cap">Instagram · LinkedIn</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case r3">
+      <div class="case-col">
+        <div class="case-key">Ausgangssituation</div>
+        <div class="case-val">Warn & Moore kommunizierte Projekterfolge intern, aber kaum nach außen. Auf LinkedIn und Instagram fehlte ein konsistentes Auftreten.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Aufgabe</div>
+        <div class="case-val">Social Media Content, der technische Inhalte professionell aufbereitet und für Fachpublikum wie Entscheider funktioniert.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ansatz</div>
+        <div class="case-val">Klare Informationshierarchie, industrienahe Bildsprache. Corporate Design mit erkennbarem System — ohne generisch zu wirken.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ergebnis</div>
+        <div class="case-val">Zwei Postings als Teil einer laufenden Content-Serie. Einheitliches visuelles System, intern weiterführbar.</div>
+      </div>
+    </div>
+
+    <div class="lay-warn r">
+      <div class="f" style="height:380px" onclick="lb('warn',0)">
+        <img loading="lazy" src="Messe.PNG" alt="Warn & Moore – Post: Mess X116">
+      </div>
+      <div class="f" style="height:380px" onclick="lb('warn',1)">
+        <img loading="lazy" src="LeipzigBaustelle.PNG" alt="Warn & Moore – Post: Baustelle Leipzig">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     05 — BESTELECTRONIC
+══════════════════════════════════════ -->
+<section class="sec bg-dark" id="besto" aria-labelledby="h-besto">
+  <div class="w">
+
+    <div class="proj-band r">
+      <span class="proj-num">05</span>
+      <h2 class="t2 c-white" id="h-besto">
+        <span style="display:block">bestelectronic</span>
+        <span style="font-family:'Pinyon Script',cursive;font-size:.75em;font-weight:400;letter-spacing:0;text-transform:none;color:rgba(236,213,213,.55);line-height:1.1;display:block;margin-left:3px">.de</span>
+      </h2>
+    </div>
+
+    <div class="proj-spread r2">
+      <div class="proj-spread-img">
+        <div class="f" style="height:440px" onclick="lb('besto',1)">
+          <img loading="lazy" src="RedDesign_Ad1.PNG" alt="bestelectronic – Ad: Pain Hook">
+          <div class="img-cap">Meta Ad · Pain Hook</div>
+        </div>
+      </div>
+      <div class="proj-spread-right">
+        <p class="t-cap c-blush proj-kicker">Performance Ads</p>
+        <h3 class="t3 c-white" style="margin-bottom:var(--s3)">Drei Ads, drei psychologische Mechanismen</h3>
+        <p class="t-body c-white-dim proj-desc">Static Ads für Meta und Instagram — konzipiert für einen E-Commerce-Shop im mittleren Preissegment gegen starke Konkurrenz.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Meta Ads</span>
+          <span class="proj-tag">1080 × 1350 px</span>
+          <span class="proj-tag">Ad Strategy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case r3">
+      <div class="case-col">
+        <div class="case-key">Ausgangssituation</div>
+        <div class="case-val">bestelectronic.de verkauft Elektronik im mittleren Preissegment gegen starke Konkurrenz. Ads mussten stoppen, Vertrauen aufbauen und zum Kauf bewegen.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Aufgabe</div>
+        <div class="case-val">Drei Static Image Ads im Format 1080 × 1350 px — jede mit eigenem psychologischen Mechanismus und definierter Zielgruppe.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ansatz</div>
+        <div class="case-val">Ad 1: Pain-Hook. Ad 2: Aspirational Positioning. Ad 3: Direkter Preisvergleich als Challenger-Argument. Jede Entscheidungsphase abgedeckt.</div>
+      </div>
+      <div class="case-col">
+        <div class="case-key">Ergebnis</div>
+        <div class="case-val">Drei verwendungsfertige Creatives mit dokumentierter Strategie für unterschiedliche Entscheidungsphasen.</div>
+      </div>
+    </div>
+
+    <div class="lay-ads r">
+      <div class="f" style="aspect-ratio:4/5" onclick="lb('besto',0)">
+        <img loading="lazy" src="GoldDesign_Ad2.PNG" alt="bestelectronic – Ad: Aspirational Positioning">
+      </div>
+      <div class="f" style="aspect-ratio:4/5" onclick="lb('besto',1)">
+        <img loading="lazy" src="RedDesign_Ad1.PNG" alt="bestelectronic – Ad: Pain Hook">
+      </div>
+      <div class="f" style="aspect-ratio:4/5" onclick="lb('besto',2)">
+        <img loading="lazy" src="GreenDesign_Ad3.PNG" alt="bestelectronic – Ad: Challenger Brand">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ OUTRO ══ -->
+<section class="outro" aria-label="Kontakt">
+  <div class="w r">
+    <div class="outro-grid">
+      <div>
+        <p class="t-cap c-white-ghost" style="margin-bottom:var(--s3)">Studio</p>
+        <div class="outro-hl">Creative Direction<br>&amp; Content</div>
+        <p class="outro-desc">Visuelle Kommunikation für digitale Kanäle. Social Media, Kampagnen, Brand Content.</p>
+      </div>
+      <div>
+        <p class="t-cap c-white-ghost" style="margin-bottom:var(--s5)">Anfragen</p>
+        <div class="contact-list">
+          <div class="c-item">
+            <span class="c-key">E-Mail</span>
+            <a href="mailto:elenafrolov@outlook.de" class="c-val">elenafrolov@outlook.de</a>
+          </div>
+          <div class="c-item">
+            <span class="c-key">Basis</span>
+            <span class="c-val">Deutschland</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fn"><span style="font-family:'Bodoni Moda',serif;font-weight:800;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.22);margin-right:10px">EF</span>Elena Frolov &nbsp;·&nbsp; 2026</div>
+  <div class="fn">Content &amp; Visual Design</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lbEl" onclick="lbBg(event)" role="dialog" aria-modal="true" aria-label="Bildvorschau">
+  <button class="lb-x" onclick="lbClose()" aria-label="Lightbox schließen">×</button>
+  <div class="lb-w"><img id="lbImg" src="" alt=""></div>
+  <div class="lb-nav">
+    <button class="lb-btn" onclick="lbStep(-1);event.stopPropagation()" aria-label="Vorheriges Bild">‹</button>
+    <span class="lb-ct" id="lbCt"></span>
+    <button class="lb-btn" onclick="lbStep(1);event.stopPropagation()" aria-label="Nächstes Bild">›</button>
+  </div>
+</div>
+
+<script>
+const G={
+  cenity:[
+    'CE_Bridetobe.jpeg',
+    'CE_RealBride.jpeg.JPG',
+    'CE_Q.jpeg.JPG',
+    'CE_Interaktiv.jpeg.JPG',
+    'CE_Begleitpersonen.jpeg.JPG',
+    'CE_Quote.JPG',
+    'CE_5Tipps.JPG',
+    'CE_to_Do.JPG',
+    'CE_Basque.PNG'
+  ],
+  essentia:[
+    'ES_Berry.PNG',
+    'ES_Off.JPG',
+    'Es_MissGreen.JPG'
+  ],
+  fred:[
+    'TheFred_VitaminB.JPG',
+    'TheFred_02.JPG',
+    'TheFred_Vitamins.JPG',
+    'TheFred_Zinc.JPG',
+    'TheFred_Quiz.jpg'
+  ],
+  warn:[
+    'Messe.PNG',
+    'LeipzigBaustelle.PNG'
+  ],
+  besto:[
+    'GoldDesign_Ad2.PNG',
+    'RedDesign_Ad1.PNG',
+    'GreenDesign_Ad3.PNG'
+  ]
+};
+
+const lbEl=document.getElementById('lbEl');
+const lbImg=document.getElementById('lbImg');
+const lbCt=document.getElementById('lbCt');
+const lbBtns=()=>[...lbEl.querySelectorAll('button')];
+let cg=[],ci=0,prevFocus=null;
+
+function lb(g,i){cg=G[g];ci=i;openLb()}
+function openLb(){
+  prevFocus=document.activeElement;
+  lbImg.src=cg[ci];lbCt.textContent=(ci+1)+' / '+cg.length;
+  lbEl.classList.add('open');document.body.style.overflow='hidden';
+  if(cg[ci+1]){const p=new Image();p.src=cg[ci+1]}
+  setTimeout(()=>lbBtns()[0]?.focus(),50);
+}
+function lbClose(){lbEl.classList.remove('open');document.body.style.overflow='';prevFocus?.focus()}
+function lbBg(e){if(e.target===lbEl)lbClose()}
+function lbStep(d){
+  ci=(ci+d+cg.length)%cg.length;
+  lbImg.src=cg[ci];lbCt.textContent=(ci+1)+' / '+cg.length;
+  if(cg[ci+1]){const p=new Image();p.src=cg[ci+1]}
+}
+lbEl.addEventListener('keydown',e=>{
+  if(!lbEl.classList.contains('open'))return;
+  const btns=lbBtns();
+  if(e.key==='Tab'){
+    const idx=btns.indexOf(document.activeElement);
+    if(e.shiftKey){if(idx<=0){e.preventDefault();btns[btns.length-1].focus()}}
+    else{if(idx>=btns.length-1){e.preventDefault();btns[0].focus()}}
+  }
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')lbClose();
+  if(lbEl.classList.contains('open')){
+    if(e.key==='ArrowRight')lbStep(1);
+    if(e.key==='ArrowLeft')lbStep(-1);
+  }
+});
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}});
+},{threshold:.06});
+document.querySelectorAll('.r,.r2,.r3').forEach(el=>io.observe(el));
+const navEl=document.querySelector('nav');
+window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+/* ── Mobile burger menu ── */
+const burgerBtn=document.getElementById('burgerBtn');
+const navDrawer=document.getElementById('navDrawer');
+function toggleMenu(force){
+  const open = force!==undefined ? force : !navDrawer.classList.contains('open');
+  navDrawer.classList.toggle('open',open);
+  burgerBtn.classList.toggle('open',open);
+  burgerBtn.setAttribute('aria-expanded',String(open));
+  navDrawer.setAttribute('aria-hidden',String(!open));
+}
+burgerBtn.addEventListener('click',()=>toggleMenu());
+// Fix: close menu first, then after drawer animates shut, follow the anchor
+document.querySelectorAll('.drawer-link').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const target=this.getAttribute('href');
+    toggleMenu(false);
+    setTimeout(()=>{
+      const el=document.querySelector(target);
+      if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    },320);
+  });
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleMenu(false)});
+
+let ts=0;
+lbEl.addEventListener('touchstart',e=>{ts=e.touches[0].clientX},{passive:true});
+lbEl.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-ts;
+  if(Math.abs(dx)>50)lbStep(dx<0?1:-1);
+},{passive:true});
+</script>
+</body>
+</html>
